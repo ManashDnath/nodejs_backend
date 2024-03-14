@@ -8,6 +8,16 @@ const server=http.createServer((req,res)=>{
   const date=new Date().toLocaleDateString();
   const time=new Date().toLocaleTimeString();
   console.log(`Here is ${date} & ${time} hope`);
+  const obj={
+    server:"crio server",
+    version:"1.0",
+    date,
+    time,
+    status:200
+  }
+
+  res.writeHead(200,{"content-Type":"application/json"});
+  res.write(JSON.stringify(obj))
   res.end();
 });
 

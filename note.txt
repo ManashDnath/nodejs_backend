@@ -1,3 +1,14 @@
 //nodemon is like running live server. As we did for html&css, where we see the real time change.
 
 //To creat a server in nodejs we have to import HTTP module. it is a part of nodejs
+
+a) Creating a server
+//http.createserver((request,response)=>{
+  response.writeHead()
+  response.write()
+  response.end()
+})
+b) connecting to a port
+//server.listen(8082,()=>{
+  console.log("connected to server")
+})
