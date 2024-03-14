@@ -4,7 +4,10 @@ const http =require("http");
 
 
 const server=http.createServer((req,res)=>{
-  console.log("hello");
+  
+
+  if(req.url==="/render"){
+    
   const date=new Date().toLocaleDateString();
   const time=new Date().toLocaleTimeString();
   console.log(`Here is ${date} & ${time} hope`);
@@ -19,6 +22,10 @@ const server=http.createServer((req,res)=>{
   res.writeHead(200,{"content-Type":"application/json"});
   res.write(JSON.stringify(obj))
   res.end();
+  }else{
+    res.write("not meet the parameter")
+    res.end();
+  }
 });
 
 server.listen(8082,()=>{
